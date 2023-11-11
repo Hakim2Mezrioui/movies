@@ -1,0 +1,47 @@
+<h1 class="text-center">Dashboard</h1>
+<div class="body">
+
+    <div class="section1">
+
+        <div class="card card1">
+            <h5>Multi Axis</h5>
+            <p-chart type="line" [data]="multiAxisData" [options]="multiAxisOptions"></p-chart>
+        </div>
+
+        <div class="messages">
+            <h3 class="text-center lastMessage">Last Messages</h3>
+            <div class="messagesContent">
+                <ul>
+                    <li (click)="goMessageForm()" routerLink="messages">
+                        <img class="me-1 mb-1" width="20em" height="20em" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" >
+                        <b>Mezrioui hakim</b>
+                        <p>Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page</p>
+                    </li>
+                    <li (click)="goMessageForm()" routerLink="messages">
+                        <img class="me-1 mb-1" width="20em" height="20em" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" >
+                        <b>Mezrioui hakim</b>
+                        <p>Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page</p>
+                    </li>
+                    <li (click)="goMessageForm()" routerLink="messages">
+                        <img class="me-1 mb-1" width="20em" height="20em" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" >
+                        <b>Mezrioui hakim</b>
+                        <p>Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page</p>
+                    </li>
+                    <li (click)="goMessageForm()" routerLink="messages">
+                        <img class="me-1 mb-1" width="20em" height="20em" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" >
+                        <b>Mezrioui hakim</b>
+                        <p>Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="section2">
+        <div class="card card2">
+            <h5>Multi Axis</h5>
+            <p-chart type="bar" [data]="multiAxisData" [options]="multiAxisOptions"></p-chart>
+        </div>
+    </div>
+</div>

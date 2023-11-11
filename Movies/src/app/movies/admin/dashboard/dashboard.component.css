@@ -1,0 +1,105 @@
+* {
+    --lightblue: rgb(241, 244, 255)
+}
+.card1 {
+    width: 40vw;
+    margin-right: 1em;
+    /* margin-top: 5.5em; */
+    min-height: 18em;
+    min-width: 40em;
+}
+
+.card2 {
+    width: calc(100vw - 50em);
+    margin-top: 2em;
+    min-width: 40em;
+}
+
+.messages {
+    height: 18em;
+    /* min-height: 18em; */
+    /* overflow-y: scroll; */
+    /* border: 1px solid; */
+    /* padding: 2px */
+    padding: 0;
+    margin-left: 1em;
+    min-width: 35em;
+    position: relative;
+    top: -2.2em;
+}
+
+.messages .lastMessage {
+    padding: .5em;
+    background-color: var(--lightblue);
+    border-radius: 1em;
+}
+
+.section1 {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    min-width: 50em;
+}
+
+.section2 {
+    display: flex;
+    justify-content: center;
+    min-width: 50em;
+}
+
+.messages ul li {
+    background-color: rgb(241, 244, 255);
+    padding: 10px;
+    margin-bottom: .5em;
+    border-radius: 1em;
+    cursor: pointer;
+}
+
+.messages ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+/* .lastMessage {
+    position: relative;
+    top: 0;
+    background-color: white;
+    width: 100%;
+} */
+
+.messagesContent {
+    overflow-y: scroll;
+    height: 18em;
+}
+
+.body {
+    padding: 2em;
+    height: 10em;
+}
+
+@media (max-width: 1600px) {
+    .section1 {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        min-width: 50em;
+    }
+
+    .messages {
+        height: 18em;
+        /* min-height: 18em; */
+        /* overflow-y: scroll; */
+        /* border: 1px solid; */
+        /* padding: 2px */
+        padding: 0;
+        margin-left: 1em;
+        min-width: 35em;
+        margin-top: 4em;
+        margin-bottom: 6em;
+    }
+
+    .messagesContent {
+        overflow-y: scroll;
+        height: 23em;
+    }
+}

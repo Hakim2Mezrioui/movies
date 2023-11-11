@@ -1,0 +1,184 @@
+*{
+    margin: 0;
+    --lightgrayodd: rgb(211, 210, 210);
+    --lightgrayeven: rgb(221, 221, 221);
+    --lightgrayhover: rgb(230, 230, 230);
+}
+
+.form {
+    margin: 5em 0 0 5em;
+    padding: 1em;
+    /* width: 40em; */
+    width: 50vw;
+    /* min-width: 25em; */
+    z-index: 0;
+    padding-right: 4em;
+    /* transform: translateX(-100%); */
+}
+
+input:invalid ~ label {
+    position: absolute;
+    transform: translate(.8em ,-2em);
+    color: rgb(117, 117, 117);
+    background: white; 
+    transition: transform .3s ease,color .3s ease; 
+    padding: 0 3px 0 3px;
+}
+
+input:focus ~ label, input:valid ~ label {
+    transform: translate(.8em ,-3.3em);
+    color: rgb(0, 4, 218);    
+    background: white; 
+    padding: 0 3px 0 3px;
+}
+
+textarea ~ label {
+    position: absolute;
+    transform: translate(.8em ,-9em);
+    color: rgb(117, 117, 117);
+    background: white; 
+    transition: transform .3s ease,color .3s ease; 
+    padding: 0 3px 0 3px;
+}
+
+textarea:focus ~ label, textarea:valid ~ label {
+    transform: translate(.8em ,-10.3em);
+    color: rgb(0, 4, 218)
+}
+
+.mt {
+    margin-top: 1em
+}
+
+.buttons {
+    position: relative;
+    margin-left: 1em;
+}
+
+.buttons button {    
+    height: 100%;
+    width: 3em;
+}
+
+.actor{
+    padding: 0;
+    width: calc(100% - 3em);
+}
+
+textarea{
+    resize: none;
+}
+
+.divActors {
+    display: flex;
+    /* justify-content: space-between; */
+}
+
+.browse {
+    display: none;
+}
+
+.label-browse {
+    position: absolute;
+    right: 10.5em;
+    cursor: pointer;
+    z-index: 2;
+}
+
+input[name='Image']:focus ~ .label-browse,
+input[name='Image']:valid ~ .label-browse {
+    display: none;
+}
+
+@media(max-width: 1600px) {
+
+    .form {
+        margin: 5em 0 0 5em;
+        padding: 1em;
+        width: 10.5em;
+        min-width: 25em;
+        z-index: 0;
+    }
+
+    .label-browse {
+        position: absolute;
+        right: 7.5em;
+        cursor: pointer;
+        z-index: 2;
+    }
+}
+
+
+
+
+
+
+
+
+.table {
+    /* margin-top: 3em;
+    margin-left: 5em; */
+    padding: 5em;    
+    position: absolute;
+    width: 100%;
+}
+
+table{
+    /* width: 40vw; */
+    width: 100%;
+    border-radius: 7em;
+    min-width: 23em;
+    border-collapse: collapse;
+    border-radius: 1em;
+    overflow: hidden;
+}
+
+th, td {
+    border-bottom: 2px solid white;
+}
+
+tr:nth-child(odd):not(:first-child) {
+    background-color: var(--lightgrayodd);
+}
+
+tr:nth-child(odd):hover:not(:first-child) {
+    background-color: var(--lightgrayhover);
+}
+
+tr:nth-child(even) {
+    background-color: var(--lightgrayeven);
+}
+tr:nth-child(even):hover {
+    background-color: var(--lightgrayhover);
+}
+
+th {
+    color: white;
+}
+
+.headerTable {
+    background-color: gray;
+}
+.headerTable:hover {
+    background-color: gray;
+}
+
+.edit {
+    margin-left: 3.5em;
+}
+
+.deleteButton {
+    float: right;
+    height: inherit;
+    margin: 0;
+    background-color: gray;
+    transform: scale(1.1);
+    border-radius: 0;
+}
+
+.deleteButton:hover {
+    float: right;
+    height: inherit;
+    margin: 0;
+    background-color: rgb(158, 158, 158);
+}

@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+}
+
+.titlePage{
+    text-align: center;
+    font-family: Iceland;
+}
+
+/* div {
+    width: 80vw;
+} */
+
+.form {
+    position: absolute;
+    z-index: 0;
+}
+
+.body{
+    display: flex;
+    /* align-items: center; */
+    justify-items: center;
+    overflow-x: hidden;
+    width: 40em;
+    /* width: 80vw; */
+    /* background-color: red; */
+    /* min-width: 60em; */
+}
+
+.card{
+    border: none;
+    background-color: transparent;
+}
+
+@media(max-width: 1600px) {
+    .body{
+        width: 60vw;
+        min-width: 60em;
+        overflow: hidden;
+    }
+}
