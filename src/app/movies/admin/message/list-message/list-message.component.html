@@ -1,0 +1,12 @@
+<div class="messages">
+    <h3 class="text-center lastMessage">Last Messages</h3>
+    <div class="messagesContent">
+        <ul>
+            <li *ngFor = "let message of listOfMessage; let i = index" (click)="onClick()" (click)="emitMessage(message)" routerLink="message">
+                <img class="me-1 mb-1" width="20em" height="20em" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" >
+                <b>{{ message.fullName }}</b>
+                <p>{{ message.message }}</p>
+            </li>
+        </ul>
+    </div>
+</div>

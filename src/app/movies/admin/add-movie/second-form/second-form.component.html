@@ -1,0 +1,157 @@
+<div>
+    <form class="form" (keypress)="Enter($event, name, image, description)" (onSumbit)="confirm()" [formGroup]="secondForm">
+        <div id="in" class="mt">
+            <input 
+            class="form-control" 
+            required 
+            type="text"
+            formControlName="trailer"
+            name="trailer"
+            id="trailer"
+            />
+            <label for="trailer">trailer</label>
+        </div>
+    
+        <div class="mt">
+            <textarea 
+            class="form-control" 
+            required 
+            name="description1" 
+            id="description1" 
+            cols="30" 
+            formControlName="description"
+            rows="5"
+            ></textarea>
+            <label for="description1">description</label>
+        </div>
+        <div class="divActors">
+            <div class="actor">
+                <div id="in" class="mt">
+                    <input 
+                    class="form-control" 
+                    required 
+                    type="text"
+                    name="Name"
+                    id="Name"
+                    #name
+                    />
+                    <label for="Name">Name</label>
+                </div>
+                <div id="in" class="mt">
+                    <input 
+                    class="form-control" 
+                    required 
+                    type="text"
+                    name="Image"
+                    id="Image"
+                    #image
+                    [value]="imageActor"
+                    />
+                    <label for="Image">Image</label>
+                    <label class="label-browse">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                        </svg>
+                        <input (change)="onFileSelected($event)" class="browse form-control" type="file" />
+                    </label>
+                </div>
+                <div class="mt">
+                    <textarea 
+                    class="form-control" 
+                    required 
+                    name="description2" 
+                    id="description2" 
+                    cols="30" 
+                    rows="5"
+                    #description
+                    ></textarea>
+                    <label for="description2">description</label>
+                </div>
+            </div>
+            <div class="buttons mt">
+                <button (click)="addActor(name, image, description)" type="button" class="btn btn-success me-2">
+                    <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    width="16" 
+                    height="16" 
+                    fill="currentColor" 
+                    class="bi bi-plus-circle-fill"
+                    viewBox="0 0 16 16"
+                    >
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="mt">
+            <button (click)="confirm()" class="btn btn-success me-2">
+                <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                width="16" height="16" 
+                fill="currentColor" 
+                class="mb-1 bi bi-check-circle-fill" 
+                viewBox="0 0 16 16">
+                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                </svg>
+                Confirm
+            </button>
+            <button
+                type="button" 
+                (click)="onClick()" 
+                class="btn btn-primary me-2">
+                <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                width="16" height="16" fill="currentColor" 
+                class="mb-1 bi bi-skip-backward-circle-fill" 
+                viewBox="0 0 16 16">
+                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.79-2.907L8.5 7.028V5.5a.5.5 0 0 0-.79-.407L5 7.028V5.5a.5.5 0 0 0-1 0v5a.5.5 0 0 0 1 0V8.972l2.71 1.935a.5.5 0 0 0 .79-.407V8.972l2.71 1.935A.5.5 0 0 0 12 10.5v-5a.5.5 0 0 0-.79-.407z"/>
+                </svg>
+                Go Back
+            </button>
+            <button 
+                type="button" 
+                routerLink="/admin" 
+                class="btn btn-danger me-2">
+                <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                width="16" height="16" 
+                fill="currentColor" 
+                class="mb-1 bi bi-x-circle-fill" 
+                viewBox="0 0 16 16">
+                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+                </svg>
+                Cancel
+            </button>
+        </div>
+    </form>
+</div>
+<div class="table" *ngIf="actors.length != 0" >
+    <table>
+        <tr class="headerTable">
+            <th>Image</th>
+            <th>Name</th>
+            <th style="width: 10em">
+                <input (focus)="onFocus()" #val (keyup)="onSearch(val.value)" class="form-control" placeholder="Search" >
+            </th>
+            <th></th>
+        </tr>
+        <tr (click)="editActor(i, name, image, description)" *ngFor="let actor of actorsArrayFiltred; let i = index" >
+            <td><img src="{{actor.img}}"  height="92em" alt="actor"></td>    
+            <td class="text-center" colspan="2">{{ actor.name }}</td>
+            <td height="100vh" class="bt p-0 m-0">
+                <button (click)="deleteActor(actor.name)" type="button" class="deleteButton btn">
+                    <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    width="16" height="16" 
+                    fill="white" 
+                    class="bi bi-dash-circle-fill" 
+                    viewBox="0 0 16 16"
+                    >
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-7z"/>
+                    </svg>
+                </button>
+            </td>
+        </tr>
+    
+    </table>
+</div>
